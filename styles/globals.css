@@ -51,3 +51,11 @@ main {
   align-items: center;
 }
 
+@media screen and (max-width: 1080px) {
+  main {
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    padding: 30px 0;
+  }
+}

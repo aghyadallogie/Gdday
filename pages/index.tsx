@@ -3,6 +3,7 @@ import Head from "next/head";
 import { TodoList } from "../components/Todos/TodoList/TodoList";
 import styled from "styled-components";
 import { NewsBoard } from "../components/News/NewsBoard";
+import { Temperature } from "../components/Temperature/Temperature";
 
 const AppContainer = styled.div`
   display: flex;
@@ -25,6 +26,7 @@ const Home: NextPage = () => {
       <main>
         <NewsBoard />
         <TodoList />
+        <Temperature />
       </main>
     </AppContainer>
   );

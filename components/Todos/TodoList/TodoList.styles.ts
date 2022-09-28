@@ -6,6 +6,7 @@ export const ListContainer = styled.div`
   align-items: center;
   flex-direction: column;
   min-height: 600px;
+  margin: 30px 0;
 `;
 
 export const ListHead = styled.span`
@@ -29,6 +30,7 @@ export const InputField = styled.div`
   position: relative;
   height: 40px;
   width: 100%;
+  margin-top: 15px;
 `;
 
 export const InputText = styled.input.attrs({ type: "text" })`
@@ -38,7 +40,7 @@ export const InputText = styled.input.attrs({ type: "text" })`
   border: none;
   font-size: 20px;
   color: rgba(22, 22, 22, 0.8);
-  padding: 5px 15px 0;
+  padding: 5px 15px 0 0;
 
   &:focus + label {
     outline: none;
@@ -68,8 +70,8 @@ export const FunnelIcon = styled.img`
   position: absolute;
   width: 40px;
   right: 0;
-  margin-top: 5px;
-  margin-right: 5px;
+  padding: 3px;
+  margin: 5px;
   cursor: pointer;
 
   &:active {
