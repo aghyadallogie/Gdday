@@ -6,18 +6,19 @@ export const ListContainer = styled.div`
   align-items: center;
   flex-direction: column;
   min-height: 600px;
+  min-width: 20rem;
   margin: 30px 0;
 `;
 
 export const ListHead = styled.span`
   position: relative;
   height: 50px;
-  width: 500px;
+  width: 100%;
   background: rgb(20, 48, 100);
 `;
 
 export const List = styled.form`
-  width: 500px;
+  width: 100%;
   min-height: 600px;
   padding: 10px 40px 30px;
   position: relative;

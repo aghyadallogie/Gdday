@@ -52,7 +52,7 @@ export const ItemText = styled.span`
   left: 30px;
   transition: 0.5s;
   color: rgba(38, 40, 136, 0.8);
-  font-size: 22px;
+  font-size: 1rem;
 
   &:before {
     content: "";

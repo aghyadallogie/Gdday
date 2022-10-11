@@ -27,6 +27,12 @@ color: white;
 background: #ff8c00;
 `;
 
+export const CountryName = styled.span`
+    margin-right: 10px;
+    font-size: 34px;
+    font-weight: 500;
+`
+
 export const WeatherIcon = styled.img`
 margin: 0px auto;
 width: 110px;

@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import {
   CountryCode,
+  CountryName,
   Degrees,
   TemperatureComponent,
   WeatherIcon,
 } from "./Temperature.styles";
 
 export const Temperature = () => {
-  const [time, setTime] = useState(new Date().toLocaleTimeString());
+  let currentdate = new Date();
 
   const days = [
     "Sunday",
@@ -21,6 +22,10 @@ export const Temperature = () => {
   ];
   const today = new Date();
   const dayName = days[today.getDay()];
+
+  let oneJan = new Date(currentdate.getFullYear(), 0, 1);
+  let numberOfDays = Math.floor((today.valueOf() - oneJan.valueOf()) / (24 * 60 * 60 * 1000));
+  let weekNumber = Math.ceil((currentdate.getDay() + 1 + numberOfDays) / 7);
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=berlin&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&units=metric`;
 
@@ -49,11 +54,9 @@ export const Temperature = () => {
   return (
     <TemperatureComponent>
       <h2>
-        <span
-          style={{ marginRight: "10px", fontSize: "34px", fontWeight: "500" }}
-        >
+        <CountryName>
           {state.name}
-        </span>
+        </CountryName>
         <CountryCode>{state.sys.country}</CountryCode>
       </h2>
 
@@ -66,7 +69,8 @@ export const Temperature = () => {
       </figure>
 
       <div>
-        <h1 style={{ fontSize: "24px", fontWeight: "500" }}>{dayName}</h1>
+        <h1 style={{ fontSize: "24px", fontWeight: "500", marginBottom: "0.5rem" }}>{dayName}</h1>
+        <h2>It is week: {weekNumber}</h2>
         <h1 style={{ padding: "15px", fontSize: "25px" }}>
           {new Date().toLocaleDateString()}
         </h1>
